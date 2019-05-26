@@ -16,9 +16,12 @@ from pathlib import Path
 VERSION_PATH = {
     "Windows": Path("D:\Games\StarCraft II\Versions"),
     "Linux": Path.home() / 'StarCraftII/Versions',
+    "MacOS": Path("/Applications/Starcraft II/Versions"),
+    "Darwin": Path("/Applications/Starcraft II/Versions"),
 }
 
 version_path = VERSION_PATH[platform.system()]
+print(version_path)
 latest_version = sorted(version_path.glob('Base*'))[-1]
 build_no = int(latest_version.name[4:])
 

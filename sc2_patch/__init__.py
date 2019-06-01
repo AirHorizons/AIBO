@@ -21,7 +21,6 @@ VERSION_PATH = {
 }
 
 version_path = VERSION_PATH[platform.system()]
-print(version_path)
 latest_version = sorted(version_path.glob('Base*'))[-1]
 build_no = int(latest_version.name[4:])
 
